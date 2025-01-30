@@ -23,6 +23,7 @@ router.get('/', async (req, res) => {
     });
     res.redirect(authRoute);
   } catch (error) {
+    console.error('Fehler bei der Installation:', error);
     res.status(500).send('Fehler bei der Installation');
   }
 });
@@ -33,6 +34,7 @@ router.get('/callback', async (req, res) => {
     await shopify.auth.validateAuthCallback(req, res, req.query);
     res.redirect('/');
   } catch (error) {
+    console.error('Fehler im Callback:', error);
     res.status(500).send('Installation fehlgeschlagen');
   }
 });
