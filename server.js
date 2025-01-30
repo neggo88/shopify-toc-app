@@ -10,7 +10,7 @@ const port = 3000;
 const shopify = shopifyApi({
   apiKey: process.env.SHOPIFY_API_KEY,
   apiSecretKey: process.env.SHOPIFY_API_SECRET,
-  scopes: process.env.SCOPES.split(','),
+scopes: process.env.SCOPES ? process.env.SCOPES.split(',') : ['write_products', 'write_content'],
   hostName: process.env.HOST.replace(/https:\/\//, ""),
   apiVersion: LATEST_API_VERSION,
   isEmbeddedApp: true,
