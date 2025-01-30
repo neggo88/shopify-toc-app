@@ -4,7 +4,8 @@ const { shopifyApi, LATEST_API_VERSION } = require('@shopify/shopify-api');
 const { NodeWebSocket } = require('@shopify/shopify-api/adapters/node'); // WICHTIG: Adapter hinzufügen
 
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000;
+
 
 // Shopify-Konfiguration MIT ADAPTER
 const shopify = shopifyApi({
