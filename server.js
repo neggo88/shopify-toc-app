@@ -28,3 +28,9 @@ app.get('/health', (req, res) => {
 app.listen(port, '0.0.0.0', () => { // Höre auf allen Netzwerkschnittstellen
   console.log(`App läuft auf Port ${port}`);
 });
+
+// Importiere die auth-Route
+const authRoutes = require('./routes/auth');
+
+// Verwende die auth-Route
+app.use('/auth', authRoutes);
